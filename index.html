@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>İyi Ki Doğdun Azra 🌙</title>
+
+<!-- GOOGLE FONT -->
+<link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+/* GENEL AYARLAR */
+body {
+    margin: 0;
+    font-family: 'Patrick Hand', cursive;
+    background: linear-gradient(to bottom, #0b1d3a, #1c3b5a);
+    color: white;
+    text-align: center;
+    overflow-x: hidden;
+    animation: fadeIn 1.5s ease-in;
+}
+
+/* FADE-IN */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* HEADER */
+header {
+    padding: 40px 20px;
+}
+h1 {
+    font-family: 'Roboto Slab', serif;
+    font-size: 2.4rem;
+    margin-bottom: 10px;
+}
+h2 {
+    font-weight: 400;
+    opacity: 0.9;
+}
+
+/* ELEMENTLER ANİMASYONLU */
+.elements {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 30px 0;
+    flex-wrap: wrap;
+    font-size: 2.5rem;
+}
+
+.element.water { animation: wave 2s ease-in-out infinite alternate; }
+@keyframes wave {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+.element.fire { animation: fire 1s ease-in-out infinite alternate; }
+@keyframes fire {
+    0% { transform: scale(1); opacity: 0.8; }
+    50% { transform: scale(1.2); opacity: 1; }
+    100% { transform: scale(1); opacity: 0.8; }
+}
+
+.element.air { display: inline-block; animation: spin 3s linear infinite; }
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.element.earth { animation: grow 2s ease-in-out infinite alternate; }
+@keyframes grow {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.3); }
+    100% { transform: scale(1); }
+}
+
+/* MESAJ */
+.message {
+    max-width: 650px;
+    margin: 0 auto;
+    padding: 25px;
+    background: rgba(0,0,0,0.3);
+    border-radius: 15px;
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+/* FOOTER */
+footer { 
+    margin-top: 40px;
+    padding: 20px;
+    font-size: 1rem;
+    opacity: 0.9; 
+}
+
+/* APPA ANİMASYONU (EKRANA KAYAR VE DURUR) */
+#appa {
+    position: fixed;
+    bottom: 50px;
+    left: -200px;
+    width: 150px;
+    cursor: pointer;
+    animation: appaFly 6s forwards;
+}
+@keyframes appaFly {
+    0% { left: -200px; transform: scale(0.5); }
+    80% { left: 50%; transform: scale(0.6); }
+    100% { left: 50%; transform: scale(0.6); }
+}
+
+/* GİZLİ MESAJ */
+#secret {
+    display: none;
+    margin-top: 15px;
+    font-size: 1rem;
+    color: #9ecbff;
+    font-family: 'Patrick Hand', cursive;
+}
+
+@media (max-width: 600px) {
+    h1 { font-size: 1.8rem; }
+    #appa { width: 100px; bottom: 30px; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>İyi Ki Doğdun Azra 🌊🔥🌪️🌱</h1>
+    <h2>Dört element, tek denge… ve bugün senin günün</h2>
+</header>
+
+<section class="elements">
+    <div class="element water">🌊</div>
+    <div class="element fire">🔥</div>
+    <div class="element air">🌪️</div>
+    <div class="element earth">🌱</div>
+</section>
+
+<section class="message">
+    <p>
+        Sevgili Azra,<br><br>
+        Avatar evreninde denge ne kadar önemliyse,  
+        benim hayatımda da sen o kadar değerlisin.  
+        Gülüşün su gibi sakin,  
+        kalbin ateş gibi güçlü,  
+        ruhun hava gibi özgür,  
+        duruşun toprak gibi sağlam 💙<br><br>
+        İyi ki varsın, iyi ki doğdun.
+    </p>
+    <p id="secret">
+        Azra, Appa seni getirdi! Bu site sadece bir doğum günü hediyesi değil, sana olan sevgimin küçük bir kanıtı 💫
+    </p>
+</section>
+
+<footer>Senin Avatarın Yunus ✨</footer>
+
+<!-- APPA GÖRSELİ -->
+<img id="appa" src="https://i.ibb.co/0jwn91p/appa.png" alt="Appa" onclick="showSecret()">
+
+<!-- MÜZİK (AUTOPLAY VE LOOP) -->
+<audio id="music" loop autoplay>
+    <source src="https://files.catbox.moe/2c2v7f.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+// Appa tıklayınca gizli mesaj göster
+function showSecret() {
+    const secret = document.getElementById("secret");
+    secret.style.display = 'block';
+}
+</script>
+
+</body>
+</html>
